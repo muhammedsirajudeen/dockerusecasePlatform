@@ -2,9 +2,12 @@
 import { useEffect, useRef, useState } from "react"
 import "./page.module.css"
 import axios from "axios"
+import Navbar from "@/components/Navbar"
 export default function Shell(){
     const [command,setCommand]=useState("")
+    const [result,setResult]=useState("")
     const executable=useRef("")
+    
     const clicked=useRef(true)
     useEffect(()=>{
  
@@ -27,7 +30,8 @@ export default function Shell(){
                         //further user details here
                     }
                     )).data
-                    console.log(response)
+                    console.log(response.message)
+                    setResult(response.message)
                 }
             })
     
@@ -36,14 +40,16 @@ export default function Shell(){
 
     },[])
     return(
-        <div className="main  flex items-center justify-center   m-10">
-            <textarea className="shellcontainer text-xs rounded-lg bg-black text-white w-96 h-96" value={command} onChange={(e)=>{
+        <div className="main  flex flex-col items-center justify-center  mb-10">
+            <Navbar/>
+            <textarea className="shellcontainer text-xs rounded-lg bg-black text-white w-96 h-60" value={command} onChange={(e)=>{
                 setCommand(e.target.value)
                 
                 executable.current=e.target.value.split("|")[1]
                 
                 localStorage.setItem("command",executable.current)
             }} ></textarea>
+            <div className="bg-black text-white w-96 h-60 mt-10">{result}</div>
         </div>
     )
 }
