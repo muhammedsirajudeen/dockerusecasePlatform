@@ -8,9 +8,10 @@ const app=express()
 //routes
 const static=require("./static/upload")
 
-
+app.use(cors())
 app.use(express.static('public'))
 app.use(express.json())
+
 
 app.use('/static',static)
 
