@@ -1,0 +1,7 @@
+date,threat_type,priority_level,threat_or_not
+2024-02-23,Malware,High,Yes
+2024-02-24,Phishing,Medium,Yes
+2024-02-25,DDoS,High,Yes
+2024-02-26,SQL Injection,Low,No
+2024-02-27,Brute Force,Medium,Yes
+

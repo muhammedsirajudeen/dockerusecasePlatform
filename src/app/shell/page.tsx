@@ -32,6 +32,7 @@ export default function Shell(){
                     )).data
                     console.log(response.message)
                     setResult(response.message)
+                    getPwd()
                 }
             })
     

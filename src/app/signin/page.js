@@ -48,14 +48,30 @@ export default function Signin(){
     }
 
     return(
-        <div className="flex flex-col items-center justify-center mt-20  " >
-            <div className="flex flex-col items-center justify-evenly h-72 "  >
-                <input type="email" className="border border-black"  placeholder="email" onChange={emailHandler} value={email} ></input>
-                <input type="password" className="border border-black"  placeholder="password" onChange={passHandler} value={password} ></input>
-                <button onClick={passwordHandler}  >signup</button>
-            
-            </div>
+<div className="flex flex-col items-center justify-center mt-20">
+  <div className="flex flex-col items-center justify-evenly h-72">
+    <input 
+      type="email" 
+      className="border border-black px-4 py-2 mb-4 rounded-md"  
+      placeholder="Email" 
+      onChange={emailHandler} 
+      value={email} 
+    />
+    <input 
+      type="password" 
+      className="border border-black px-4 py-2 mb-4 rounded-md"  
+      placeholder="Password" 
+      onChange={passHandler} 
+      value={password} 
+    />
+    <button 
+      onClick={passwordHandler}  
+      className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+    >
+      Signin
+    </button>
+  </div>
+</div>
 
-        </div>
     )
 }
